@@ -12,6 +12,6 @@ RUN apt-get install -y ffmpeg
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 9000
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
