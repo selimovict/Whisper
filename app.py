@@ -19,6 +19,7 @@ else:
 model = whisper.load_model("medium")
 
 from flask import Flask, abort, request
+from flask_cors import CORS
 from tempfile import NamedTemporaryFile
 import torch
 
@@ -28,7 +29,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/")
 def hello():
